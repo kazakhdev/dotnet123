@@ -36,7 +36,7 @@ namespace FS.Todo.Core.Services
                  Model = statusModel.Model,
                  Name = statusModel.Name,
                  Code = statusModel.Code,
-    };
+             };
 
             statusEntity = await _statusRepository.AddAsync(statusEntity);
 
@@ -110,7 +110,7 @@ namespace FS.Todo.Core.Services
             throw new NotImplementedException();
         }
 
-        public async Task<StatusModel> UpdateTodoAsync(StatusModel statusModel)
+        public async Task<StatusModel> UpdateAsync(StatusModel statusModel)
         {
             var statusEntity = new Data.Entities.Status
             {

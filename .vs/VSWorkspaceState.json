@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\backend",
-    "\\backend\\FS.Todo.Api",
-    "\\backend\\FS.Todo.Api\\Controllers",
+    "\\backend\\FS.Todo.Core",
+    "\\backend\\FS.Todo.Core\\Models",
     "\\backend\\FS.Todo.Data",
     "\\backend\\FS.Todo.Data\\Entities",
     "\\backend\\FS.Todo.Data\\Repositories",

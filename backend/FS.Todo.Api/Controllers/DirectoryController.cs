@@ -39,7 +39,7 @@ namespace FS.Todo.Api.Controllers
 
             [HttpGet]
             [ProducesResponseType(StatusCodes.Status200OK)]
-            public async Task<ActionResult<List<DirectoryModel>>> GetDirectoryAsync(int id)
+            public async Task<ActionResult<List<DirectoryModel>>> GetDirectoryAsync(Guid id)
             {
                 var directories = await _directoryService.GetDirectoryAsync(id);
                 return Ok(directories);
@@ -67,7 +67,7 @@ namespace FS.Todo.Api.Controllers
             [ProducesResponseType(StatusCodes.Status404NotFound)]
             [ProducesResponseType(StatusCodes.Status204NoContent)]
             [ProducesResponseType(StatusCodes.Status400BadRequest)]
-            public async Task<ActionResult> UpdateDirectoryAsync(int id, UpdateDirectoryModel updateDirectoryModel)
+            public async Task<ActionResult> UpdateDirectoryAsync(Guid id, UpdateDirectoryModel updateDirectoryModel)
             {
                 if (id != updateDirectoryModel.Id)
                 {

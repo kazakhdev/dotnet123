@@ -11,7 +11,7 @@ namespace FS.Todo.Core.Interfaces
         Task<DirectoryModel> UpdateDirectoryAsync(DirectoryModel directoryModel);
         Task<DirectoryModel> GetDirectoryAsync(Guid directoryId);
         Task DeleteDirectoryAsync(Guid directoryId);
-        Task<List<DirectoryModel>> GetDirectoryAsync(int id);
+        Task<List<DirectoryModel>> GetDirectoriesAsync();
         Task FindAsync(Guid directoryId);
     }
 }

@@ -48,6 +48,8 @@ namespace FS.Todo.Api
             services.AddDbContext<TodoContext>(options =>
             options.UseNpgsql(Configuration["ConnectionString"]));
             services.AddScoped<IStatusService, StatusService>();
+            services.AddScoped<IDirectoryRepository, DirectoryRepository>();
+            services.AddScoped<IDirectoryService, DirectoryService>();
             services.AddScoped<IStatusRepository, StatusRepository>();
             services.AddScoped<ITodoService, TodoService>();
             services.AddScoped<ITodoRepository, TodoRepository>();
