@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\backend",
-    "\\backend\\FS.Todo.Core",
-    "\\backend\\FS.Todo.Core\\Models",
-    "\\backend\\FS.Todo.Data",
-    "\\backend\\FS.Todo.Data\\Entities",
-    "\\backend\\FS.Todo.Data\\Repositories",
-    "\\backend\\FS.Todo.Tests",
-    "\\backend\\FS.Todo.Tests\\Core",
-    "\\backend\\FS.Todo.Tests\\Data"
+    ""
   ],
-  "SelectedNode": "\\backend\\FS.Todo.sln",
+  "SelectedNode": "\\FS.Todo.sln",
   "PreviewInSolutionExplorer": false
 }

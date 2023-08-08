@@ -12,8 +12,8 @@ namespace FS.Todo.Data.Entities
         public int Priority { get; set; }
         public bool IsResponsible { get; set; }
         public string Requesttype { get; set; }
-        public int Date { get; set; }
-        public string Request { get; set; }
+        public DateTime Date { get; set; }
+        public string RequestedPerson { get; set; }
 
     }
 }

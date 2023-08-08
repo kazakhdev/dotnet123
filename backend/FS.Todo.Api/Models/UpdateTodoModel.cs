@@ -11,7 +11,7 @@ namespace FS.Todo.Api.Models
         public bool IsCompleted { get; set; }
         public string System { get; set; }
         public string Module { get; set; }
-        public int Priority { get; set; }
+        public string Priority { get; set; }
         public bool IsResponsible { get; set; }
         public string Requesttype { get; set; }
         public DateHandler Date { get; set; }

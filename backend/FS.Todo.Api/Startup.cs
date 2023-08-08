@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using FS.Todo.Core.Interfaces;
 using FS.Todo.Core.Services;
 using FS.Todo.Data;

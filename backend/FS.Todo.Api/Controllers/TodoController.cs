@@ -51,7 +51,15 @@ namespace FS.Todo.Api.Controllers
             var todoModel = new TodoModel
             {
                 Description = createTodoModel.Description,
-                IsCompleted = createTodoModel.IsCompleted
+                Id = createTodoModel.Id,
+                IsCompleted = createTodoModel.IsCompleted,
+                System = createTodoModel.System,
+                Module = createTodoModel.Module,
+                Priority = createTodoModel.Priority,    
+                IsResponsible = createTodoModel.IsResponsible,
+                Requesttype = createTodoModel.Requesttype,
+                Date = createTodoModel.Date,
+                RequestedPerson = createTodoModel.RequestedPerson
             };
 
             var createdTodo = await _todoService.CreateTodoAsync(todoModel);
@@ -79,7 +87,7 @@ namespace FS.Todo.Api.Controllers
 
             var todoModel = new TodoModel
             {
-                Id = id,
+                Id = updateTodoModel.Id,
                 Description = updateTodoModel.Description,
                 IsCompleted = updateTodoModel.IsCompleted,
                 System = updateTodoModel.System,

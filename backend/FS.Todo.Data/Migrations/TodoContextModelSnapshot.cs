@@ -83,8 +83,8 @@ namespace FS.Todo.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<int>("Date")
-                        .HasColumnType("integer");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
@@ -101,7 +101,7 @@ namespace FS.Todo.Data.Migrations
                     b.Property<int>("Priority")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Request")
+                    b.Property<string>("RequestedPerson")
                         .HasColumnType("text");
 
                     b.Property<string>("Requesttype")
