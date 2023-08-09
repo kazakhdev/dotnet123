@@ -58,7 +58,7 @@ namespace FS.Todo.Api.Controllers
                 Priority = createTodoModel.Priority,    
                 IsResponsible = createTodoModel.IsResponsible,
                 Requesttype = createTodoModel.Requesttype,
-                Date = createTodoModel.Date,
+            
                 RequestedPerson = createTodoModel.RequestedPerson
             };
 
@@ -95,7 +95,7 @@ namespace FS.Todo.Api.Controllers
                 Priority = updateTodoModel.Priority,    
                 IsResponsible = updateTodoModel.IsResponsible,
                 Requesttype = updateTodoModel.Requesttype,
-                Date = updateTodoModel.Date,
+             
                 RequestedPerson = updateTodoModel.RequestedPerson
             };
 

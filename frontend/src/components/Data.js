@@ -6,7 +6,6 @@ const Data = ({
   id,
   Module,
   Description,
-  System,
   Priority,
   RequestedPerson,
   handleRemoveBook,
@@ -22,7 +21,7 @@ const Data = ({
           <div>Priority: {Priority} </div>
           <div>Модуль: {Module} </div>
           <div>RequestedPerson: {RequestedPerson} </div>
-          <div>Date: {new Date().toDateString()}</div>
+      
         </div>
         <Button variant="primary" onClick={() => history.push(`/edit/${id}`)}>
           Edit

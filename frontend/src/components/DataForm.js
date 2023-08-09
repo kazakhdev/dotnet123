@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
-import { useHttp } from '../hooks/useHttp';
-
+import axios from 'axios';
 const DataForm = (props) => {
-  const { sendRequest } = useHttp();
+  
   const [data, setData] = useState(() => {
     return {
       Description: props.data ? props.data.Description : '',
@@ -21,12 +20,9 @@ const DataForm = (props) => {
     event.preventDefault();
     const values = [Description, Module, Priority, RequestedPerson];
     let errorMsg = '';
-  
-    const allFieldsFilled = values.every((field) => {
-      const value = `${field}`.trim();
-      return value !== '' && value !== '0';
-    });
-  
+
+    const allFieldsFilled = values.every((field) => field.trim() !== '' && field !== '0');
+
     if (allFieldsFilled) {
       const data = {
         id: uuidv4(),
@@ -35,28 +31,31 @@ const DataForm = (props) => {
         Module,
         date: new Date(),
       };
-  
+
       try {
-        const response = await sendRequest('https://localhost:5001//todo', 'POST', data, {
-          'Content-Type': 'application/json',
+        const response = await axios.post('https://localhost:5001/Todo/', data, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
         });
-  
-        if (response.ok) {
-          
+
+        if (response.status === 200) {
+          // Handle successful response
         } else {
-        
+          // Handle error response
         }
       } catch (error) {
-       
+        // Handle error
       }
-  
+
       props.handleOnSubmit(data);
     } else {
       errorMsg = 'Please fill out all the fields.';
     }
     setErrorMsg(errorMsg);
   };
-  
+
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     switch (name) {
@@ -97,7 +96,7 @@ const DataForm = (props) => {
           <Form.Label>Проблема</Form.Label>
           <Form.Control
             className="input-control"
-            type="text"
+            type="string"
             name="RequestedPerson"
             value={RequestedPerson}
             placeholder="Имя"

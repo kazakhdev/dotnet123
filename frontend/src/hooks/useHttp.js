@@ -1,4 +1,4 @@
-import  { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useRef } from 'react';
 
 export const useHttp = () => {
   const [error, setError] = useState(null);
@@ -6,23 +6,22 @@ export const useHttp = () => {
   const [messages, setMessages] = useState(null);
   const dataRef = useRef(null); // Use useRef to store the data value
 
-  const sendRequest = useCallback(async (body = null, headers = {}) => {
+  const sendRequest = useCallback(async (url = 'https://localhost:5001/todo',  method = 'GET', body = null, headers = {}) => {
     setLoading(true);
     try {
       if (body) {
         if (headers['Content-Type'] !== 'multipart/form-data; charset=utf-8; boundary="--WebKitBoundary"') {
           body = JSON.stringify(body);
         }
-      }
-      const response = await fetch('https://localhost:5001/todo', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
+        if (headers['Content-Type'] === undefined) {
+          headers['Content-Type'] = 'application/json'
         }
-      });
-
+      }
+    
+      const response = await fetch(url, { method, body, headers });
       const jsonData = await response.json();
-      dataRef.current = jsonData; // Store the data value in the ref
+
+      dataRef.current = jsonData; // Store the data value in the re
       setLoading(false);
 
       if (!response.ok) {
@@ -38,10 +37,6 @@ export const useHttp = () => {
       throw e;
     }
   }, []);
-
-  useEffect(() => {
-    sendRequest();
-  }, [sendRequest]);
 
   const clearError = useCallback(() => setError(null), []);
   const clearMessages = useCallback(() => setMessages(null), []);

@@ -13,7 +13,7 @@ namespace FS.Todo.Api.Models
         public string Priority { get; set; }
         public bool IsResponsible { get; set; }
         public string Requesttype { get; set; }
-        public DateHandler Date { get; set; }
+    
         public string RequestedPerson { get; set; }
 
 

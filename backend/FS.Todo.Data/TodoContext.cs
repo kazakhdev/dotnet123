@@ -17,7 +17,9 @@ namespace FS.Todo.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql("User ID=postgres;Password=kazakh;Host=localhost;Port=5432;Database=databd;Pooling=true;");
+       
         }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
