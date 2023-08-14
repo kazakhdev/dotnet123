@@ -1,7 +1,15 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\backend",
+    "\\backend\\FS.Todo.Api",
+    "\\backend\\FS.Todo.Api\\Views",
+    "\\backend\\FS.Todo.Api\\Views\\Admins",
+    "\\backend\\FS.Todo.Api\\Views\\Home",
+    "\\backend\\FS.Todo.Api\\Views\\Roles",
+    "\\backend\\FS.Todo.Api\\wwwroot",
+    "\\backend\\FS.Todo.Core",
+    "\\backend\\FS.Todo.Data"
   ],
-  "SelectedNode": "\\FS.Todo.sln",
   "PreviewInSolutionExplorer": false
 }
